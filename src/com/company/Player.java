@@ -3,14 +3,13 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Player {
     private String name;
     private ArrayList<Ship> ships;
 
     public Player(String n) {
         name = n;
-        PlayerGrid name = new PlayerGrid(); //giving each player grids
+        PlayerGrid name = new PlayerGrid(); // giving each player grids
     }
 
     public String getName() {
@@ -30,12 +29,14 @@ public class Player {
         for (int i = 0; i < ships.size(); i++) {
 
         }
+        input.close();
     }
 
-    public void displayShips() { //inventory
+    public void displayShips() { // inventory
         for (int i = 0; i < ships.size(); i++) {
             System.out.println(ships.get(i).getName() + ": Size - " + ships.get(i).getLength());
         }
+        
         System.out.println();
     }
 }
