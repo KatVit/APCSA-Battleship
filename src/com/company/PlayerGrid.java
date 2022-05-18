@@ -19,6 +19,15 @@ public class PlayerGrid {
             }
         }
     }
+    public void printOwnBoard(){
+        System.out.println("Below is your current board and ship placements:");
+        for(int i  = 0; i<rows; i++){
+            for (int j = 0; j < columns; i++){
+                System.out.print(pGrid[i][j] + "  ");
+            }
+            System.out.println();
+        }
+    }
 
     public int[][] addShip(Ship ship, boolean isHorizontal, int xStart, int yStart) {
         if (isHorizontal) { // if the ship is being placed horizontally on the x axis
