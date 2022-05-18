@@ -44,6 +44,7 @@ public class Player {
     }
     public void makeTurn(Player opponent){
         Scanner input = new Scanner((System.in));
+        grids.printGuessBoard();
         System.out.println("Please enter the x-coord of your guess: ");
         int x = input.nextInt();
         System.out.println("Please enter the y-coord of your guess: ");
@@ -52,11 +53,17 @@ public class Player {
         for (int i = 0; i <opponent.ships.size(); i++){
             for (int j = 0; j<opponent.ships.get(i).getPosition().length; i++){
                 if (guess == opponent.ships.get(i).getPosition()[j]){
-                    System.out.println("You hit one of your opponents ships! :D you're so cool look at you go");
+                    System.out.println("You hit one of your opponents ships! :D you're so cool look at you go. now guess again");
                     opponent.grids.getOwnGrid()[x][y] = -1; //shows opponent ship was hit
                     grids.getGuesses()[x][y] = 1; //shows you opponent ship was hit
+                    makeTurn(opponent); //make another turn if they got it right
                 }
             }
+        }
+        int i =0;
+        while ( i <50){
+            System.out.println();
+            i++;
         }
         input.close();
     }
