@@ -16,6 +16,10 @@ public class Player {
         return name;
     }
 
+    public ArrayList<Ship> getShips(){
+        return ships;
+    }
+
     public void addShips() {
         ships.add(new Ship(5, "Battleship"));
         ships.add(new Ship(4, "Cruiser"));
@@ -24,7 +28,7 @@ public class Player {
         ships.add(new Ship(2, "Submarine"));
     }
 
-    public void shipsToGrid() {
+    public void shipsToGrid(Player player) {
         Scanner input = new Scanner(System.in);
         boolean isHorizontal = false;
         int startX = 0;
@@ -37,7 +41,7 @@ public class Player {
             startX = input.nextInt();
             System.out.println("Please enter the y value for the topmost end of the ship. Remember that this ship is " + ships.get(i).getLength() + " units long");
             startY = input.nextInt();
-            grids.addShip(ships.get(i), isHorizontal, startX, startY);
+            grids.addShip(player, ships.get(i), isHorizontal, startX, startY);
             ships.get(i).addedToBoard();
         }
         grids.printOwnBoard();
