@@ -7,6 +7,7 @@ public class Player {
     private String name;
     private ArrayList<Ship> ships;
     PlayerGrid grids;
+
     public Player(String n) {
         name = n;
         grids = new PlayerGrid(); // giving each player grids
@@ -15,9 +16,11 @@ public class Player {
     public String getName() {
         return name;
     }
-
     public ArrayList<Ship> getShips(){
         return ships;
+    }
+    public PlayerGrid getGrids(){
+        return grids;
     }
 
     public void addShips() {
@@ -27,7 +30,7 @@ public class Player {
         ships.add(new Ship(3, "Frigate"));
         ships.add(new Ship(2, "Submarine"));
     }
-
+    
     public void shipsToGrid(Player player) {
         Scanner input = new Scanner(System.in);
         boolean isHorizontal = false;
