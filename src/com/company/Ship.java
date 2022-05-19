@@ -4,11 +4,16 @@ public class Ship {
     private final int length;
     private final String name;
     private Position[] positions;
+    boolean onBoard;
 
     public Ship(int l, String n){
         length = l;
         name = n;
         positions = new Position[l];
+        onBoard = false;
+    }
+    public void addedToBoard(){
+        onBoard = true;
     }
 
     public String getName(){

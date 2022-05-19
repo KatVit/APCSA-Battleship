@@ -38,6 +38,7 @@ public class Player {
             System.out.println("Please enter the y value for the topmost end of the ship. Remember that this ship is " + ships.get(i).getLength() + " units long");
             startY = input.nextInt();
             grids.addShip(ships.get(i), isHorizontal, startX, startY);
+            ships.get(i).addedToBoard();
         }
         grids.printOwnBoard();
         input.close();
