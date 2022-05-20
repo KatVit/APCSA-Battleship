@@ -19,13 +19,13 @@ public class GameManager {
             player1.getGrids().printOwnBoard();
             player1.getGrids().printGuessBoard();
             System.out.println();
-            System.out.println("Your ships: " + player1.getShips().size() + " | Computer ships: " + player2.getShips().size());
+            System.out.println("Your ships: " + player1.getShips().size() + " | Opponent's ships: " + player2.getShips().size());
             System.out.println();
             player2.getGrids().printOwnBoard();
             player2.getGrids().printGuessBoard();
             System.out.println();
             System.out.println();
-            System.out.println("Your ships: " + player2.getShips().size() + " | Computer ships: " + player1.getShips().size());
+            System.out.println("Your ships: " + player2.getShips().size() + " | Opponent's ships: " + player1.getShips().size());
             System.out.println();
         }
         gameOver(player1, player2);
@@ -34,10 +34,12 @@ public class GameManager {
 
     public void gameOver(Player player1, Player player2){
         System.out.println("Player 1's ships: " + player1.getShips().size() + " | Player 2's ships: " + player2.getShips().size());
-        if(player1.getShips().size() > 0 && player2.getShips().size() <= 0)
-            System.out.println("Hooray! Player 1 wins! :)");
-        else
-            System.out.println("Hooray! Player 2 wins! :)");
+        if(player1.getShips().size() > 0 && player2.getShips().size() <= 0){
+            System.out.println(player1 + " wins! :)");
+        }
+        else{
+            System.out.println(player2 + " wins! :)");
+        }
         System.out.println();
     }
 }
