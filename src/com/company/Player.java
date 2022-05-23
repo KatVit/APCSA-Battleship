@@ -26,6 +26,7 @@ public class Player {
     }
 
     public void addShips() {
+        ships = new ArrayList<Ship>();
         ships.add(new Ship(5, "Battleship"));
         ships.add(new Ship(4, "Cruiser"));
         ships.add(new Ship(3, "Destroyer"));
@@ -41,7 +42,7 @@ public class Player {
         for (int i = 0; i < ships.size(); i++) {
             grids.printOwnBoard();
             System.out.println("You are currently placing your " + ships.get(i).getName()
-                    + ". Please enter H if you would like to place this ship horizontally, and V if you would like to place it vertically");
+                    + " (Size: " + ships.get(i).getLength() +"). Please enter H if you would like to place this ship horizontally, and V if you would like to place it vertically");
             isHorizontal = input.next().equalsIgnoreCase("H");
             System.out.println("Please enter the x value for the leftmost end of the ship. Remember that this ship is "
                     + ships.get(i).getLength() + " units long");

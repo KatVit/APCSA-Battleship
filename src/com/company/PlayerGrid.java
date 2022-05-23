@@ -30,21 +30,24 @@ public class PlayerGrid {
 
     public void printOwnBoard() {
         System.out.println("Below is your current board and ship placements:");
+        System.out.println("0 1 2 3 4 5 6 7 8 9 \n");
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; i++) {
+            for (int j = 0; j < columns; j++) {
                 System.out.print(pGrid[i][j] + "  ");
             }
-            System.out.println();
+            System.out.println("   | " + i);
         }
+        System.out.println();
     }
 
     public void printGuessBoard() {
         System.out.println("Below are your current guesses:");
+        System.out.println("0 1 2 3 4 5 6 7 8 9 \n");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; i++) {
                 System.out.print(pGuesses[i][j] + "  ");
             }
-            System.out.println();
+            System.out.println("   | " + i);
         }
         System.out.println();
     }
