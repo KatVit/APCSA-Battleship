@@ -6,25 +6,29 @@ public class Ship {
     private Position[] positions;
     boolean onBoard;
 
-    public Ship(int l, String n){
+    public Ship(int l, String n) {
         length = l;
         name = n;
         positions = new Position[l];
         onBoard = false;
     }
-    public void addedToBoard(){
+
+    public void addedToBoard() {
         onBoard = true;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     };
-    public int getLength(){
+
+    public int getLength() {
         return length;
     }
-    public void addPosition(int i, Position a){
+
+    public void addPosition(int i, Position a) {
         positions[i] = a;
     }
+
     public Position[] getPosition() {
         return positions;
     }

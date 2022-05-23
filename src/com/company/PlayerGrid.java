@@ -19,10 +19,12 @@ public class PlayerGrid {
             }
         }
     }
-    public int[][] getOwnGrid(){
+
+    public int[][] getOwnGrid() {
         return pGrid;
     }
-    public int[][] getGuesses(){
+
+    public int[][] getGuesses() {
         return pGuesses;
     }
 
@@ -51,7 +53,7 @@ public class PlayerGrid {
         boolean loop = true;
         boolean newPosition = false;
         if (isHorizontal) {
-            while (loop ){
+            while (loop) {
                 while (xStart + ship.getLength() > 9 || xStart < 0) { // if it is going to not fit in the xaxis
                     System.out.println(
                             "This placement exceeds the horizontal boundaries of the grid. Please enter a valid x-coordinate for the leftmost point of the "
@@ -65,11 +67,13 @@ public class PlayerGrid {
                     yStart = input.nextInt();
                 }
                 newPosition = false;
-                for (int i = 0; i< player.getShips().size(); i++){
-                    if (player.getShips().get(i).onBoard){
-                        for (int j = 0; j <player.getShips().get(i).getPosition().length; j++){
-                            if ((xStart == player.getShips().get(i).getPosition()[j].getX()) && (yStart == player.getShips().get(i).getPosition()[j].getY())){
-                                System.out.println("This ship overlaps with another ship that has already been placed on the board. Please enter a new starting x position for your ship");
+                for (int i = 0; i < player.getShips().size(); i++) {
+                    if (player.getShips().get(i).onBoard) {
+                        for (int j = 0; j < player.getShips().get(i).getPosition().length; j++) {
+                            if ((xStart == player.getShips().get(i).getPosition()[j].getX())
+                                    && (yStart == player.getShips().get(i).getPosition()[j].getY())) {
+                                System.out.println(
+                                        "This ship overlaps with another ship that has already been placed on the board. Please enter a new starting x position for your ship");
                                 xStart = input.nextInt();
                                 System.out.println("Please enter a new starting y position for your ship");
                                 yStart = input.nextInt();
@@ -78,7 +82,7 @@ public class PlayerGrid {
                         }
                     }
                 }
-                if (!newPosition){
+                if (!newPosition) {
                     loop = false;
                 }
             }
@@ -90,7 +94,7 @@ public class PlayerGrid {
                 xStart++;
             }
         } else {
-            while(loop){
+            while (loop) {
                 while (yStart + ship.getLength() > 9 || yStart < 0) { // if it is going to not fit in the yaxis
                     System.out.println(
                             "This placement exceeds the vertical boundaries of the grid. Please enter a valid y-coordinate for the topmost point of the "
@@ -104,11 +108,13 @@ public class PlayerGrid {
                     xStart = input.nextInt();
                 }
                 newPosition = false;
-                for (int i = 0; i< player.getShips().size(); i++){
-                    if (player.getShips().get(i).onBoard){
-                        for (int j = 0; j <player.getShips().get(i).getPosition().length; j++){
-                            if ((xStart == player.getShips().get(i).getPosition()[j].getX()) && (yStart == player.getShips().get(i).getPosition()[j].getY())){
-                                System.out.println("This ship overlaps with another ship that has already been placed on the board. Please enter a new starting x position for your ship");
+                for (int i = 0; i < player.getShips().size(); i++) {
+                    if (player.getShips().get(i).onBoard) {
+                        for (int j = 0; j < player.getShips().get(i).getPosition().length; j++) {
+                            if ((xStart == player.getShips().get(i).getPosition()[j].getX())
+                                    && (yStart == player.getShips().get(i).getPosition()[j].getY())) {
+                                System.out.println(
+                                        "This ship overlaps with another ship that has already been placed on the board. Please enter a new starting x position for your ship");
                                 xStart = input.nextInt();
                                 System.out.println("Please enter a new starting y position for your ship");
                                 yStart = input.nextInt();
@@ -117,18 +123,18 @@ public class PlayerGrid {
                         }
                     }
                 }
-                if (!newPosition){
+                if (!newPosition) {
                     loop = false;
                 }
             }
             for (int i = yStart; i < yStart + ship.getLength(); i++) {
                 pGrid[xStart][i] = ship.getLength();
             }
-             for (int i = 0; i < ship.getLength(); i++) {
+            for (int i = 0; i < ship.getLength(); i++) {
                 ship.addPosition(i, new Position(xStart, yStart));
-                 yStart++;
-             }
-          }
+                yStart++;
+            }
+        }
         return pGrid;
     }
 }
