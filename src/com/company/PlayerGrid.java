@@ -42,7 +42,7 @@ public class PlayerGrid {
 
     public void printGuessBoard() {
         System.out.println("Below are your current guesses:");
-        System.out.println("0 1 2 3 4 5 6 7 8 9 \n");
+        System.out.println("0  1  2  3  4  5  6  7  8  9 \n");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; i++) {
                 System.out.print(pGuesses[i][j] + "  ");
@@ -92,7 +92,7 @@ public class PlayerGrid {
             for (int i = xStart; i < xStart + ship.getLength(); i++) { // placing the ship on the player grid
                 pGrid[i][yStart] = ship.getLength();
             }
-            for (int i = xStart; i < ship.getLength(); i++) { // updating the ship object to match the position
+            for (int i = 0; i < ship.getLength(); i++) { // updating the ship object to match the position
                 ship.addPosition(i, new Position(xStart, yStart));
                 xStart++;
             }

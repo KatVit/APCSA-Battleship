@@ -42,12 +42,12 @@ public class Player {
         for (int i = 0; i < ships.size(); i++) {
             grids.printOwnBoard();
             System.out.println("You are currently placing your " + ships.get(i).getName()
-                    + " (Size: " + ships.get(i).getLength() +"). Please enter H if you would like to place this ship horizontally, and V if you would like to place it vertically");
+                    + " (Size: " + ships.get(i).getLength() +"). Please enter H if you would like to place this ship vertically, and V if you would like to place it horizontally");
             isHorizontal = input.next().equalsIgnoreCase("H");
             System.out.println("Please enter the x value for the leftmost end of the ship. Remember that this ship is "
                     + ships.get(i).getLength() + " units long");
             startX = input.nextInt();
-            System.out.println("Please enter the y value for the topmost end of the ship. Remember that this ship is "
+            System.out.println("Please enter the ys value for the topmost end of the ship. Remember that this ship is "
                     + ships.get(i).getLength() + " units long");
             startY = input.nextInt();
             grids.addShip(player, ships.get(i), isHorizontal, startX, startY);
