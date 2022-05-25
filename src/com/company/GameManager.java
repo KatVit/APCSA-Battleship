@@ -11,7 +11,8 @@ public class GameManager {
         player1.addShips();
         player1.shipsToGrid(player1);
         System.out.print("Player 2, Please enter your name: ");
-        Player player2 = new Player(input.next());
+        String name = input.next();
+        Player player2 = new Player(name);
         player2.addShips();
         player2.shipsToGrid(player2);
         while (player1.getShips().size() > 0 && player2.getShips().size() > 0) {

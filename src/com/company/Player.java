@@ -46,10 +46,10 @@ public class Player {
             isHorizontal = input.next().equalsIgnoreCase("H");
             System.out.println("Please enter the x value for the leftmost end of the ship. Remember that this ship is "
                     + ships.get(i).getLength() + " units long");
-            startX = input.nextInt();
-            System.out.println("Please enter the ys value for the topmost end of the ship. Remember that this ship is "
-                    + ships.get(i).getLength() + " units long");
             startY = input.nextInt();
+            System.out.println("Please enter the y value for the topmost end of the ship. Remember that this ship is "
+                    + ships.get(i).getLength() + " units long");
+            startX = input.nextInt();
             grids.addShip(player, ships.get(i), isHorizontal, startX, startY);
             ships.get(i).addedToBoard();
         }

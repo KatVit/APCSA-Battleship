@@ -30,7 +30,7 @@ public class PlayerGrid {
 
     public void printOwnBoard() {
         System.out.println("Below is your current board and ship placements:");
-        System.out.println("0 1 2 3 4 5 6 7 8 9 \n");
+        System.out.println("0  1  2  3  4  5  6  7  8  9  \n");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 System.out.print(pGrid[i][j] + "  ");
@@ -77,9 +77,9 @@ public class PlayerGrid {
                                     && (yStart == player.getShips().get(i).getPosition()[j].getY())) {
                                 System.out.println(
                                         "This ship overlaps with another ship that has already been placed on the board. Please enter a new starting x position for your ship");
-                                xStart = input.nextInt();
-                                System.out.println("Please enter a new starting y position for your ship");
                                 yStart = input.nextInt();
+                                System.out.println("Please enter a new starting y position for your ship");
+                                xStart = input.nextInt();
                                 newPosition = true;
                             }
                         }
@@ -118,9 +118,9 @@ public class PlayerGrid {
                                     && (yStart == player.getShips().get(i).getPosition()[j].getY())) {
                                 System.out.println(
                                         "This ship overlaps with another ship that has already been placed on the board. Please enter a new starting x position for your ship");
-                                xStart = input.nextInt();
-                                System.out.println("Please enter a new starting y position for your ship");
                                 yStart = input.nextInt();
+                                System.out.println("Please enter a new starting y position for your ship");
+                                xStart = input.nextInt();
                                 newPosition = true;
                             }
                         }
