@@ -16,8 +16,8 @@ public class GameManager {
         player2.addShips();
         player2.shipsToGrid(player2);
         while (player1.getShips().size() > 0 && player2.getShips().size() > 0) {
-            player1.getGrids().printOwnBoard();
-            player1.makeTurn(player2);
+            //player1.getGrids().printOwnBoard(); //problem
+            player1.makeTurn(player2); //problem
             System.out.println();
             System.out.println(
                     "Your ships: " + player1.getShips().size() + " | Opponent's ships: " + player2.getShips().size());
@@ -25,7 +25,7 @@ public class GameManager {
                 gameOver(player1, player2);
                 System.exit(0);
             }
-            player2.getGrids().printOwnBoard();
+            //player2.getGrids().printOwnBoard();
             player2.makeTurn(player1);
             System.out.println();
             System.out.println();

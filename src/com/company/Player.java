@@ -54,7 +54,6 @@ public class Player {
             ships.get(i).addedToBoard();
         }
         grids.printOwnBoard();
-        input.close();
     }
 
     public void makeTurn(Player opponent) {
